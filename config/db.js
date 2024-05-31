@@ -5,9 +5,9 @@ let database = 'loginlogout';
 const collectionName = 'users'
 
 exports.mongoDbConnection = async () => {
-    let connected = await client.connect();
-    let db = connected.db(database)
-    let result = db.collection(collectionName);
+    let mongodbinstance = await client.connect();
+    let mongodbdatabase = mongodbinstance.db(database)
+    let result = mongodbdatabase.collection(collectionName);
     return result;
 }
 

@@ -9,7 +9,6 @@ async function signinUser(userData) {
     }
 }
 
-// Example usage:
 const userData = {
     email: "abcxyz@gmail.com",
     password: "password123"
