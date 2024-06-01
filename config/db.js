@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-const url = 'mongodb://localhost:27017'
+const url = process.env.url || 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 let database = 'loginlogout';
 const collectionName = 'users'
