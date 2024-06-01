@@ -2,7 +2,7 @@ const express = require('express');
 const { insertData } = require('./dbOperations/addusers');
 const { checkUser } = require('./Verifications/verifyuser')
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -21,6 +21,6 @@ app.post('/signup', async (req, res) => {
 app.post('/signin', async (req, res) => {
     return await checkUser(req.body,res);
 })
-app.listen(port, () => {
-    console.log(`server is running on port ${port}`)
+app.listen(PORT, () => {
+    console.log(` ${new Date().toJSON()} - app - server is running on port ${PORT}`)
 })
