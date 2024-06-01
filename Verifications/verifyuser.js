@@ -1,6 +1,6 @@
 const { getData } = require('../dbOperations/fetchdata');
 
-async function checkUser(credentials, res) {
+const checkUser = async (credentials, res) => {
     try {
         let result;
         const users = await getData();
@@ -21,7 +21,7 @@ async function checkUser(credentials, res) {
     }
 }
 
-async function isUserPresent(credentials) {
+const isUserPresent = async (credentials) => {
     try {
         const users = await getData();
         const { first_name } = credentials;
